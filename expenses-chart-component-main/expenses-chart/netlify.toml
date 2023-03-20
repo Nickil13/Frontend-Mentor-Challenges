@@ -1,6 +1,0 @@
-# app netlify.toml
-[build]
-  command = "npm run build"
-
-
-
