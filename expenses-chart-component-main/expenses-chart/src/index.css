@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "DM Sans", sans-serif;
+    }
+
+    body {
+        @apply text-base;
+    }
+
+    .h1 {
+        @apply text-xlg;
+    }
+    .h2 {
+        @apply text-lg;
+    }
+    .floating-span {
+        @apply text-xs;
+    }
+
+    @media screen(lg) {
+        .h1 {
+            @apply text-3xl;
+        }
+        .h2 {
+            @apply text-2xl;
+        }
+        .floating-span {
+            @apply text-sm;
+        }
+    }
+}
+
+@layer components {
+    .tooltip {
+        @apply floating-span opacity-0 absolute -top-8 left-1/2 -translate-x-1/2 text-neutral-white bg-neutral-dark-brown rounded p-1 lg:-top-10;
+    }
+    .bar:hover .tooltip {
+        @apply opacity-100;
+    }
+}

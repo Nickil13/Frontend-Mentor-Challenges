@@ -1,0 +1,219 @@
+@font-face {
+    font-family: "HankenGrotesk";
+    font-display: swap;
+    font-weight: 100 900;
+    src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf")
+        format("truetype");
+}
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --clr-light-red-values: 0, 100%, 67%;
+    --clr-light-red: hsl(var(--clr-light-red-values));
+
+    --clr-orange-yellow-values: 39, 100%, 56%;
+    --clr-orange-yellow: hsl(var(--orange-yellow-values));
+
+    --clr-green-teal-values: 166, 100%, 37%;
+    --clr-green-teal: hsl(var(--green-teal-values));
+
+    --clr-cobalt-blue-values: 234, 85%, 45%;
+    --clr-cobalt-blue: hsl(var(--clr-cobalt-blue));
+
+    --clr-light-slate: hsl(252, 100%, 67%);
+    --clr-light-royal: hsl(241, 81%, 54%);
+
+    --clr-violet-circle: hsla(256, 72%, 46%, 1);
+    --clr-persion-circle: hsla(241, 72%, 46%, 0);
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-pale-blue: hsl(221, 100%, 96%);
+    --clr-light-lavender: hsl(241, 100%, 89%);
+    --clr-dark-grey-blue-values: 224, 30%, 27%;
+    --clr-dark-grey-blue: hsl(var(--clr-dark-grey-blue-values));
+
+    --gradient-circle: linear-gradient(
+        var(--clr-violet-circle),
+        var(--clr-persion-circle)
+    );
+
+    --gradient-primary: linear-gradient(
+        var(--clr-light-slate),
+        var(--clr-light-royal)
+    );
+
+    --fs-base: 1.125rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.75rem;
+    --fs-2xl: 3.75rem;
+}
+body {
+    font-family: "HankenGrotesk";
+    font-size: var(--fs-base);
+}
+
+.results-summary-component {
+    --border-radius: 30px;
+    --padding: 2.5rem;
+
+    display: grid;
+    max-width: 800px;
+}
+/* Your Result */
+.results-section {
+    background-image: var(--gradient-primary);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    color: var(--clr-light-lavender);
+    padding: var(--padding) calc(var(--padding) * 1.5);
+}
+
+.results-section h1 {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+}
+.results-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.results-section > *:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.results-score {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: var(--gradient-circle);
+    width: 12rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.results-score span {
+    display: block;
+    color: var(--clr-pale-blue);
+    font-weight: 800;
+    font-size: var(--fs-2xl);
+    line-height: 1;
+}
+
+.results-description {
+    text-align: center;
+}
+
+.results-title {
+    color: var(--clr-pale-blue);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .results-section {
+        border-radius: var(--border-radius);
+    }
+}
+
+/* Summary */
+.summary-section {
+    padding: var(--padding);
+}
+
+.summary-section > *:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.summary-section h2 {
+    align-self: flex-start;
+    font-size: var(--fs-lg);
+    color: var(--clr-dark-grey-blue);
+    font-weight: 700;
+}
+
+.skills {
+    display: grid;
+    gap: 10px;
+}
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 800;
+    background-color: hsla(var(--item-color), 10%);
+    color: hsl(var(--item-color));
+}
+.skill-item__title {
+    display: flex;
+    align-items: center;
+}
+.skill-item__title img {
+    margin-right: 10px;
+}
+.skill-item__score {
+    color: hsla(var(--clr-dark-grey-blue-values), 40%);
+}
+.skill-item__score span {
+    color: var(--clr-dark-grey-blue);
+}
+
+.skill-item[data-item-type="light-red"] {
+    --item-color: var(--clr-light-red-values);
+}
+
+.skill-item[data-item-type="orange-yellow"] {
+    --item-color: var(--clr-orange-yellow-values);
+}
+
+.skill-item[data-item-type="green-teal"] {
+    --item-color: var(--clr-green-teal-values);
+}
+
+.skill-item[data-item-type="cobalt-blue"] {
+    --item-color: var(--clr-cobalt-blue-values);
+}
+
+.button {
+    border-radius: 100px;
+    border: none;
+    background-color: var(--clr-dark-grey-blue);
+    color: var(--clr-white);
+    padding: 1rem;
+    width: 100%;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.button:focus-visible,
+.button:hover {
+    background: var(--gradient-primary);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
+    .results-summary-component {
+        margin-inline: 1rem;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0.5rem 1rem 3rem hsla(var(--clr-cobalt-blue-values), 20%);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+}
