@@ -1,0 +1,7 @@
+# app netlify.toml
+[build]
+  command = "npm build"
+  publish = "public"
+
+
+
