@@ -1,0 +1,237 @@
+
+/* - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+- Weights: 300, 600
+
+- Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+- Weights: 400, 500, 700 */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/* Remove the default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --ff-primary: "Overpass", sans-serif;
+    --ff-secondary: "Ubuntu", sans-serif;
+    --clr-primary: hsl(356, 100%, 66%);
+    --clr-primary-2: hsl(355, 100%, 74%);
+    --clr-primary-3: hsl(208, 49%, 24%);
+    --clr-neutral-1: hsl(0, 0%, 100%);
+    --clr-neutral-2: hsl(240, 2%, 79%);
+    --clr-neutral-3: hsl(207, 13%, 34%);
+    --clr-neutral-4: hsl(240, 10%, 16%);
+    --clr-gradient-nav-1: hsl(13, 100%, 72%);
+    --clr-gradient-nav-2: hsl(353, 100%, 62%);
+    --clr-gradient-body-1:hsl(237, 17%, 21%);
+    --clr-gradient-body-2: hsl(237, 23%, 32%);
+    --f-size-body: 16px;
+    --width-desktop: 1440px;
+    --width-mobile: 375px;
+
+
+}
+h1,h2,h3{
+    font-family: var(--ff-primary);
+}
+body{
+    margin: 0;
+    font-size: var(--f-size-body);
+    font-family: var(--ff-secondary);
+}
+.container{
+    background-color: var(--clr-neutral-1);
+    max-width: var(--width-desktop);
+    margin: 0 auto;
+}
+
+header{
+    position: relative;
+    background: linear-gradient(150deg,var(--clr-gradient-nav-1),
+    var(--clr-gradient-nav-2));
+    min-height: 34rem;
+    border-bottom-left-radius: 4em;
+    overflow: hidden;
+}
+
+.header-overlay{
+    position: absolute;
+    background: url(images/bg-pattern-intro.svg);
+    background-size: 1200px;
+    background-position: 35% 35%;
+    width: 100%;
+    height: 100%;
+    
+}
+.logo{
+    width: 80px;
+}
+nav{
+    padding: 3em 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-btns, .login-btns{
+    display: none;
+}
+.menu-btn{
+    width: 45px;
+    height: 25px;
+}
+
+.nav-dropdown{
+    display: none;
+}
+.dropdown-arrow{
+    margin-left: 5px;
+}
+
+.hero{
+    margin: 0 auto;
+    text-align: center;
+    padding: 3.2em;
+    color: var(--clr-neutral-1);
+}
+h1{
+    font-size: 30px;
+    margin-bottom: .5em;
+}
+.hero p{
+    font-family: var(--ff-primary);
+    margin-bottom: 3em;
+}
+
+
+.btn{
+    /* width: 105px;
+    height: 35px; */
+    width: 8em;
+    height: 3em;
+    font-size: 15px;
+    border-radius: 2rem;
+    border: solid 1px transparent;
+    background: transparent;
+    color: var(--clr-neutral-1);
+    font-weight: 500;
+    font-family: var(--ff-secondary);
+}
+.btn-trans{
+    border-color: var(--clr-neutral-1);
+}
+.btn-white{
+    color: var(--clr-primary);
+    background: var(--clr-neutral-1);
+}
+
+.hero-btn{
+    margin-bottom:0.50em;
+    margin-left: 0.75em;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family:var(--ff-primary);
+    /* padding: 3em; */
+    padding-top: 3em;
+    padding-bottom: 3em;
+    margin-top: 3em;
+    /* background-color: plum; */
+}
+section img{
+    /* max-width: 300px; */
+    width: 100%;
+    /* width: 380px; */
+    /* max-width: 400px; */
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+section h2, article h3{
+    color:var(--clr-primary-3);
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+}
+section article{
+    max-width: 40ch;
+    line-height: 1.6em;
+    margin-bottom: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+section article p{
+    color: var(--clr-neutral-3);
+}
+.phones-section{
+    background: url("images/bg-pattern-circles.svg"),
+    linear-gradient(160deg,var(--clr-gradient-body-1),
+    var(--clr-gradient-body-2));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% -80%;
+    border-bottom-left-radius: 6em;
+    border-top-right-radius: 6em;
+    margin-top: 10em;
+}
+.phones-section img{
+    margin-top: -250px;
+}
+.phones-section h3{
+    font-size: 35px;
+    line-height: 1.2em;
+}
+.phones-section h3{
+    color: var(--clr-neutral-1);
+}
+.phones-section article p{
+    color: var(--clr-neutral-2);
+}
+
+@media (min-width: 900px) {
+    .editor-section{
+        padding: 4em;
+        overflow: hidden;
+        color:var(--clr-neutral-3);
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 40px;
+    }
+    .editor-section .article-box{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .editor-section h2{
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        justify-self: center;
+        font-size: 25px;
+    }
+    .editor-section img{
+        width: 500px;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        margin-top: 1em;
+    }
+
+    .phones-section{
+        flex-direction: row;
+    }
+
+    .laptop-section{
+        flex-direction: row-reverse;
+    }
+
+    .nav-btns, .login-btns{
+        display: block;
+    }
+    .menu-btn{
+        display:none;
+    }
+}
