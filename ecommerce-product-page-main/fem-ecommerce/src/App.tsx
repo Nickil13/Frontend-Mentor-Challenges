@@ -1,21 +1,22 @@
-import { useState } from "react";
-import Shoe from "./assets/images/image-product-1.jpg";
+import Navbar from "./components/Navbar";
+import Slider from "./components/Slider";
+import CartIcon from "./assets/images/icon-cart.svg?react";
+
 function App() {
     return (
         <>
-            <nav className="shadow-sm h-[120px]"></nav>
+            <Navbar />
             <main>
-                {/* slider */}
-                <div className="aspect-square overflow-hidden">
-                    <img src={Shoe} alt="shoe" className="object-cover" />
-                </div>
-                <div className="p-6">
-                    <p className="uppercase font-bold text-primary">
-                        Sneaker Company
-                    </p>
-                    <h1 className="text-3xl font-bold">
-                        Fall Limited Edition Sneakers
-                    </h1>
+                <Slider />
+                <div className="p-6 space-y-6">
+                    <div>
+                        <p className="uppercase font-bold text-primary text-sm tracking-wider mb-2">
+                            Sneaker Company
+                        </p>
+                        <h1 className="text-3xl font-bold">
+                            Fall Limited Edition Sneakers
+                        </h1>
+                    </div>
                     <p className="text-dark-grayish-blue">
                         These low-profile sneakers are your perfect casual wear
                         companion. Featuring a durable rubber outer sole,
@@ -32,11 +33,16 @@ function App() {
                             $250.00
                         </p>
                     </div>
-                    <div>
-                        <div>
-                            <button>-</button>0<button>+</button>
+                    <div className="flex flex-col space-y-4">
+                        <div className="flex items-center justify-between font-bold bg-light-grayish-blue px-6 py-2 rounded-lg">
+                            <button className="text-primary text-3xl">-</button>
+                            0
+                            <button className="text-primary text-3xl">+</button>
                         </div>
-                        <button>Add to cart</button>
+                        <button className="bg-primary p-4 rounded-lg font-bold text-white flex items-center justify-center">
+                            <CartIcon className="mr-4 w-5 h-5 text-white" />
+                            Add to cart
+                        </button>
                     </div>
                 </div>
             </main>
